@@ -1,0 +1,29 @@
+{% extends "base.html"%}
+{% block title %}login_test_page{% endblock %}
+{% block content %}
+<div class="wrapper">
+	<div class="content">
+		<div id="form_wrapper" class="form_wrapper">
+					<form class="login active" method="POST" action=".">
+						<h3>Login</h3>
+						<div>
+							<label>Username:</label>
+							<input type="text" name="username" />
+							<{% for item in error %}
+    						<p style="color:red;text-align:center;">{{item}}</p>
+  							{% endfor %}
+						</div>
+						<div>
+							<input type="password" name="password" />
+						</div>
+						<div class="bottom">
+							<div class="remember"><input type="checkbox" /><span>Keep me logged in</span></div>
+							<input type="submit" value="Login"></input>
+							<a href="register.html" rel="register" class="linkform">You don't have an account yet? Register here</a>
+						</div>
+					</form>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+{% endblock %}

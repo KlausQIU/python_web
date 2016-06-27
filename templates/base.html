@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="Expand, contract, animate forms with jQuery wihtout leaving the page" />
+    <meta name="keywords" content="expand, form, css3, jquery, animate, width, height, adapt, unobtrusive javascript"/>
+        <link rel="stylesheet" type="text/css" href="{% static "login/css/style.css" %}" />
+		<script src="{% static "login/js/cufon-yui.js" %}" type="text/javascript"></script>
+		<script src="{% static "login/js/ChunkFive_400.font.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			Cufon.replace('h1',{ textShadow: '1px 1px #fff'});
+			Cufon.replace('h2',{ textShadow: '1px 1px #fff'});
+			Cufon.replace('h3',{ textShadow: '1px 1px #000'});
+			Cufon.replace('.back');
+		</script>
+</head>
+<body>
+{% block content %}
+{% endblock %}
+{% block footer %}
+<div class="footer">
+<span>&copy; 2016 KlausQiu</span>
+<span class="dot">·</span>
+<a target="_blank" href="#" class="footer_link">圆桌</a>
+<span class="dot">·</span>
+<a target="_blank" href="#" data-za-c="explore" data-za-a="visit_explore" data-za-l="home_bottom_explore" class="footer_link">discover</a>
+<span class="dot">·</span>
+<a target="_blank" href="#" class="footer_link">Move</a>
+<span class="dot">·</span>
+<a target="_blank" href="#" class="footer_link">JOIN</a>
+<span class="dot">·</span>
+<a href="http://www.miibeian.gov.cn/" target="_blank" class="footer_link">京 ICP 备 13052560 号</a>
+</div>
+{% endblock%}
+</body>
+</html>
