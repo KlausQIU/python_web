@@ -6,7 +6,7 @@ from django.db import models
 class User(models.Model):
 	Uid = models.AutoField(primary_key=True)
 	name = models.CharField(max_length = 30)
-	phonenumber =models.TextField(max_length=100)
+	phonenumber =models.CharField(max_length=100)
 	email = models.EmailField()
 	address = models.TextField(max_length=100)
 	password = models.CharField(max_length=50)
@@ -23,14 +23,14 @@ class Experience(models.Model):
 	endtime = models.DateField()
 	company = models.CharField(max_length = 30)
 	position = models.CharField(max_length = 30)
-	content = models.CharField(max_length = 3000)
+	content = models.TextField(max_length = 3000)
 
 	def __unicode__(self):
 		return u"%s"%self.company
 
 class skill(models.Model):
 	user = models.ForeignKey(User,related_name='user_skill')
-	skillname = models.TextField(max_length=100)
+	skillname = models.TextField(max_length=300)
 
 	def __unicode__(self):
 		return u"%s"%self.skillname
@@ -40,7 +40,7 @@ class Education(models.Model):
 	starttime = models.DateField()
 	endtime = models.DateField()
 	school = models.TextField(max_length=30)
-	content = models.TextField(max_length=30)
+	content = models.TextField(max_length=3000)
 
 	def __unicode__(self):
 		return u"%s"%self.school
